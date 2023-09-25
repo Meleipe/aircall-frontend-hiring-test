@@ -1,4 +1,12 @@
+import { useAuth } from '../../hooks';
+import { useLocalStorage } from '../../hooks';
+
 export const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-  // TODO check that the user is authenticated before displaying the route
+  const { isLoggingIn, logout } = useAuth();
+  const [accessToken] = useLocalStorage('access_token', undefined);
+
+  if (!isLoggingIn && !accessToken) {
+    logout();
+  }
   return <>{children}</>;
 };

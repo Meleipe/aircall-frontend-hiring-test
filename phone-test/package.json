@@ -10,11 +10,13 @@
     "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.13",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.26",
     "date-fns": "^2.29.3",
     "graphql": "^16.6.0",
+    "graphql-ws": "^5.14.0",
     "husky": "^8.0.2",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
@@ -23,12 +25,14 @@
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.6",
+    "subscriptions-transport-ws": "^0.11.0",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "cypress": "npx cypress open",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -59,5 +63,8 @@
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write"
     ]
+  },
+  "devDependencies": {
+    "cypress": "^13.2.0"
   }
 }

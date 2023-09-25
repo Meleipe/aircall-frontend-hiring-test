@@ -32,6 +32,7 @@ export const LoginForm = ({ onSubmit, formState }: LoginFormProps) => {
       <Grid columnGap={4} rowGap={5} gridTemplateColumns="1fr">
         <FormItem label="Email" name="email">
           <TextFieldInput
+            data-test-id="username"
             placeholder="job@aircall.io"
             value={email}
             onChange={e => setEmail(e.target.value)}
@@ -39,13 +40,14 @@ export const LoginForm = ({ onSubmit, formState }: LoginFormProps) => {
         </FormItem>
         <FormItem label="Password" name="password">
           <TextFieldInput
+            data-test-id="password"
             type="password"
             value={password}
             onChange={e => setPassword(e.target.value)}
           />
         </FormItem>
         <FormItem>
-          <Button block type="submit">
+          <Button block type="submit" data-test-id="login">
             {formState === 'Pending' ? <Icon component={SpinnerOutlined} spin /> : 'Login'}
           </Button>
         </FormItem>

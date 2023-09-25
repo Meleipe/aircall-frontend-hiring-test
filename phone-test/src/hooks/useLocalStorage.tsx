@@ -1,14 +1,14 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback } from 'react';
 
 export const useLocalStorage = (keyName: string, defaultValue: any) => {
-  const storedValue = useMemo(() => {
+  const storedValue = () => {
     const value = window.localStorage.getItem(keyName);
     if (value) {
       return JSON.parse(value);
     } else {
       return defaultValue;
     }
-  }, [keyName, defaultValue]);
+  };
 
   const setStoredValue = useCallback(
     (value: any) => {
@@ -21,5 +21,5 @@ export const useLocalStorage = (keyName: string, defaultValue: any) => {
     [keyName]
   );
 
-  return [storedValue, setStoredValue];
+  return [storedValue(), setStoredValue];
 };
